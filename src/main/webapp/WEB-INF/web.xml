@@ -63,5 +63,12 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
         <servlet-name>dispatcherServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-
+	
+	<jsp-config>
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+			<page-encoding>UTF-8</page-encoding>
+			<include-prelude>/WEB-INF/include.jsp</include-prelude>
+		</jsp-property-group>
+	</jsp-config>
 </web-app>
