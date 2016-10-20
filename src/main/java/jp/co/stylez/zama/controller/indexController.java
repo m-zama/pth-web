@@ -10,7 +10,7 @@ import jp.co.stylez.zama.form.EntryForm;
 @Controller
 public class indexController {
 
-	@RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "/",method = {RequestMethod.GET, RequestMethod.POST})
     public String index(Model model) {
 		EntryForm entryForm = new EntryForm();
 		model.addAttribute(entryForm);
