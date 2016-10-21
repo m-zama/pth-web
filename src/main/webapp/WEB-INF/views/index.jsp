@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>login</h1>
-	<form:form action="home" modelAttribute="entryForm">
+	<form:form action="home" modelAttribute="homeForm">
 	<table>
     <tr><th>Email:</th><td><form:input type="text" path="email" /></td><td><form:errors path="email" element="div" cssStyle="color:red"/></td></tr>
     <tr><th>Password:</th><td><form:input type="password" path="password" /> </td><td><form:errors path="password" element="div" cssStyle="color:red"/></td></tr>

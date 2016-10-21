@@ -10,7 +10,7 @@
 </head>
 <body>
 <h2>input your Email and Password.</h2>
-	<form:form action="confirm" modelAttribute="entryForm">
+	<form:form action="confirm" modelAttribute="homeForm">
 	<table>
     <tr><th>Email:</th><td><form:input type="text" path="email" /></td><td><form:errors path="email" element="div" cssStyle="color:red"/></td></tr>
     <tr><th>Password:</th><td><form:input type="password" path="password" /> </td><td><form:errors path="password" element="div" cssStyle="color:red"/></td></tr>

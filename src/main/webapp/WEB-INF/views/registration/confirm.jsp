@@ -10,12 +10,12 @@
 </head>
 <h2>Do you sign up for an account with this content?</h2>
 <table>
-<tr><th>Email:</th><td><c:out value="${entryForm.email}"></c:out></td></tr>
-<tr><th>Password:</th><td><c:out value="${entryForm.password}"></c:out></td></tr>
+<tr><th>Email:</th><td><c:out value="${homeForm.email}"></c:out></td></tr>
+<tr><th>Password:</th><td><c:out value="${homeForm.password}"></c:out></td></tr>
 <tr><td></td><td>
-<form:form action="complete" modelAttribute="entryForm">
-<form:hidden path="email" value="${entryForm.email}"/>
-<form:hidden path="password" value="${entryForm.password}"/>
+<form:form action="complete" modelAttribute="homeForm">
+<form:hidden path="email" value="${homeForm.email}"/>
+<form:hidden path="password" value="${homeForm.password}"/>
 <form:button>sign up</form:button>
 </form:form></td></tr>
 

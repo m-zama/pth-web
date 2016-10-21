@@ -54,7 +54,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
         </init-param>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>jp.co.stylez.zama.config.WebMvcConfig</param-value>
+            <param-value>jp.co.stylez.pth.web.config.WebMvcConfig</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
@@ -68,7 +68,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		<jsp-property-group>
 			<url-pattern>*.jsp</url-pattern>
 			<page-encoding>UTF-8</page-encoding>
-			<include-prelude>/WEB-INF/include.jsp</include-prelude>
+			<include-prelude>/WEB-INF/views/include.jsp</include-prelude>
 		</jsp-property-group>
 	</jsp-config>
 </web-app>
