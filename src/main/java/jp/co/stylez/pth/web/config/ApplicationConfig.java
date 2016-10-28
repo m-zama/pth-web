@@ -5,6 +5,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan("jp.co.stylez.pth.web")
-public class AppConfig {
+public class ApplicationConfig {
 
 }

@@ -12,7 +12,14 @@
 Welcome!
 	<h1>home</h1>
 	<a href="<c:url value='/input'/>">Sign up</a>
-
-
+<hr />
+<table style="border-collapse:collapse;border:2px grey solid">
+<tr><th style="background-color:grey;border:2px grey solid;padding:5px">Email:</th></tr>
+	<c:forEach var="userList" items="${userList}">
+	<tr><td style="border:2px grey solid;padding:5px">
+		<c:out value="${userList.email}"></c:out>
+		</td></tr>
+	</c:forEach>
+</table>
 </body>
 </html>

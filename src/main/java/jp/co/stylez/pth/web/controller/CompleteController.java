@@ -25,8 +25,7 @@ public class CompleteController {
 			return "registration/input";
 		}
 		
-		String test = userService.signupUser(entryForm.createUserDto());
-		System.out.println(test);
+		userService.registerUser(entryForm.createUserDto());
 		
 		model.addAttribute(entryForm);
 		return "registration/complete";

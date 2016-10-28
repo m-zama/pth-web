@@ -4,8 +4,8 @@
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
 >
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.jtbgmt.bs2</groupId>
-    <artifactId>jtbgmt_bs2</artifactId>
+    <groupId>pth-web</groupId>
+    <artifactId>pth-web</artifactId>
     <packaging>war</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <name>Spring MVC Application</name>
