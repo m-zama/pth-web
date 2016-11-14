@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import jp.co.stylez.pth.web.dto.UserDto;
+import jp.co.stylez.pth.service.UserService;
+import jp.co.stylez.pth.web.entity.UserEntity;
 import jp.co.stylez.pth.web.form.HomeForm;
-import jp.co.stylez.pth.web.service.UserService;
 
 @Controller
 public class HomeController {
@@ -23,7 +23,7 @@ public class HomeController {
 	
 	@GetMapping("home")
 	public String entry(Model model){
-		List<UserDto> userList = userService.findUserAll();
+		List<UserEntity> userList = userService.findAll();
 		model.addAttribute("userList",userList);
 		return "home/home";
 	}
@@ -32,7 +32,7 @@ public class HomeController {
 		if(result.hasErrors()){
 			return "/index";
 		}
-		List<UserDto> userList = userService.findUserAll();
+		List<UserEntity> userList = userService.findAll();
 		model.addAttribute("userList",userList);
 		return "home/home";
 	}

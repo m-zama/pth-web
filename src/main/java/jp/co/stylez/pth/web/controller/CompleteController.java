@@ -7,8 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import jp.co.stylez.pth.service.UserService;
 import jp.co.stylez.pth.web.form.HomeForm;
-import jp.co.stylez.pth.web.service.UserService;
 
 
 
@@ -25,7 +25,7 @@ public class CompleteController {
 			return "registration/input";
 		}
 		
-		userService.registerUser(entryForm.createUserDto());
+		userService.createUser(entryForm.createUserEntity());
 		
 		model.addAttribute(entryForm);
 		return "registration/complete";

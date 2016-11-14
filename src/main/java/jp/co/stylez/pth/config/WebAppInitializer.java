@@ -1,4 +1,4 @@
-package jp.co.stylez.pth.web.config;
+package jp.co.stylez.pth.config;
 
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;

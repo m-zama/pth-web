@@ -1,4 +1,4 @@
-package jp.co.stylez.pth.web.config;
+package jp.co.stylez.pth.config;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -11,9 +11,9 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.Resource;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
-@Configuration
-@PropertySource("classpath:persistence.properties")
-@MapperScan("jp.co.stylez.pth.web.mapper")
+//@Configuration
+//@PropertySource("classpath:persistence.properties")
+//@MapperScan("jp.co.stylez.pth.web.mapper")
 public class MyBatisConfig {
 
     @Value("${dataSource.driverClassName}")
@@ -30,7 +30,7 @@ public class MyBatisConfig {
     @Autowired
     private DriverManagerDataSource dataSource;
     
-    @Bean
+    @Bean(destroyMethod = "close")
     public DriverManagerDataSource dataSource() {
     	DriverManagerDataSource dataSource = new DriverManagerDataSource();
     	dataSource.setDriverClassName(driver);

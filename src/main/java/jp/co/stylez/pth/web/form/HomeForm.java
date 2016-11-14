@@ -3,7 +3,7 @@ package jp.co.stylez.pth.web.form;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
-import jp.co.stylez.pth.web.dto.UserDto;
+import jp.co.stylez.pth.web.entity.UserEntity;
 
 public class HomeForm {
 
@@ -27,7 +27,7 @@ public class HomeForm {
 		this.password = password;
 	}
 	
-	public UserDto createUserDto(){
-		return new UserDto(this.email,this.password);
+	public UserEntity createUserEntity(){
+		return new UserEntity(this.email,this.password);
 	}
 }
