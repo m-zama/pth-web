@@ -9,17 +9,17 @@ import org.aspectj.lang.annotation.Before;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-//@Aspect
-//@Component
-//@Order(1)
+@Aspect
+@Component
+@Order(1)
 public class ControllerLoggingAspectA {
 
-//	@Before("execution(* jp.co.stylez.pth.web.controller.*.*(..))")
+	@Before("execution(* jp.co.stylez.pth.web.controller.*.*(..))")
 	public void startLog(JoinPoint jp){
 		System.out.println("Aコントローラー開始："+ jp.getSignature());
 	}
 	
-//	@AfterReturning("execution(* jp.co.stylez.pth.web.controller.*.*(..))")
+	@AfterReturning("execution(* jp.co.stylez.pth.web.controller.*.*(..))")
 	public void endLog(JoinPoint jp){
 		System.out.println("Aコントローラー正常終了："+ jp.getSignature());
 	}
