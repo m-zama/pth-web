@@ -3,6 +3,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <html>
 <head>
+<!-- <link rel="stylesheet" type="text/css" href="/css/main.css""> -->
 <title>login</title>
 </head>
 <body>
@@ -10,31 +11,39 @@
 	<a href="?locale=en">English</a>
 	<a href="?locale=ja">Japanese</a>
 
-	<h2>
+	<p>
 		<spring:message code="welcome.message" htmlEscape="false" />
-	</h2>
+	</p>
 	<%-- 	<h2>${WelcomeMassage}</h2> --%>
-	<h2>${jsonBean.hello}</h2>
+	<p>JSON:${jsonBean.hello}</p>
 
 	<form:form action="home" modelAttribute="homeForm">
-		<table>
+		<table style="border-collapse: collapse; border: 2px grey solid">
 			<tr>
-				<th colspan="2">Login Form</th>
+				<th
+					style="background-color: grey; border: 2px grey solid; padding: 5px">Login
+					Form</th>
 			</tr>
 			<tr>
-				<th>Email:</th>
-				<td><form:input type="text" path="email" /></td>
-				<td><form:errors path="email" element="div"
-						cssStyle="color:red" /></td>
+				<td>Email:<form:input
+						type="text" path="email" /></td>
 			</tr>
 			<tr>
-				<th>Password:</th>
-				<td><form:input type="password" path="password" /></td>
-				<td><form:errors path="password" element="div"
-						cssStyle="color:red" /></td>
+			<td>
+				<form:errors path="email" element="div" cssStyle="color:red" />
+			</td>
 			</tr>
 			<tr>
-				<td></td>
+				<td>
+					Password:<form:input type="password" path="password" />
+				</td>
+			</tr>
+			<tr>
+			<td>
+				<form:errors path="password" element="div" cssStyle="color:red" />
+			</td>
+			</tr>
+			<tr>
 				<td><form:button>login</form:button></td>
 			</tr>
 		</table>

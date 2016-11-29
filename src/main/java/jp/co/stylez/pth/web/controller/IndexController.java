@@ -18,19 +18,16 @@ import jp.co.stylez.pth.web.form.HomeForm;
 @Controller
 public class IndexController {
 
-	@Autowired
-	MessageSource messageSource;
 
 	@Autowired
-	@Qualifier("ResourceServiceImpl")
-	ResourceService ResourceService;
+	ResourceService resourceService;
 	
 	@RequestMapping(value = "/",method = {RequestMethod.GET, RequestMethod.POST})
     public String index(Model model,Locale locale) throws IOException{
 		HomeForm entryForm = new HomeForm();
 		model.addAttribute(entryForm);
 		
-		JsonBean jsonBean = ResourceService.accessJsonResource();
+		JsonBean jsonBean = resourceService.accessJsonResource();
 		model.addAttribute(jsonBean);
 		
 		return "index";

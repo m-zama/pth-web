@@ -12,6 +12,7 @@ import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.i18n.CookieLocaleResolver;
@@ -27,10 +28,26 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
 	private static final String MESSAGE_SOURCE = "classpath:messages";
 
+    private static final String RESOURCES_LOCATION = "/resources/";
+    private static final String RESOURCES_HANDLER = RESOURCES_LOCATION + "**";
+
+    private static final String JAVA_SCRIPT_LOCATION = "/js/";
+    private static final String JAVA_SCRIPT_HANDLER = JAVA_SCRIPT_LOCATION + "**";
+
+    private static final String CSS_LOCATION = "/css/";
+    private static final String CSS_HANDLER = CSS_LOCATION + "**";
+	
 	@Override
 	public void configureViewResolvers(ViewResolverRegistry registry) {
 		registry.jsp("/WEB-INF/views/", ".jsp");
 	}
+	
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry
+        .addResourceHandler(RESOURCES_HANDLER, JAVA_SCRIPT_HANDLER, CSS_HANDLER)
+        .addResourceLocations(RESOURCES_LOCATION, JAVA_SCRIPT_LOCATION, CSS_LOCATION);
+    }
 
 	@Bean(name = "messageSource")
 	public MessageSource messageSource() {

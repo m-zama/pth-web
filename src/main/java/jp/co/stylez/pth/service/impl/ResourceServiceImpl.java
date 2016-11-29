@@ -17,7 +17,6 @@ import jp.co.stylez.pth.service.ResourceService;
 import jp.co.stylez.pth.web.bean.JsonBean;
 
 @Service
-@Qualifier("ResourceServiceImpl")
 public class ResourceServiceImpl implements ResourceService{
 
 	@Autowired
