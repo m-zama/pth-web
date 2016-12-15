@@ -16,11 +16,11 @@ import jp.co.stylez.pth.web.form.HomeForm;
 @Controller
 public class CompleteController {
 
-//	@Autowired
-//	private UserService userService;
-	
 	@Autowired
-	private UserDao userDao;
+	private UserService userService;
+	
+//	@Autowired
+//	private UserDao userDao;
 	
 	@PostMapping("complete")
 	public String confirm(Model model,HomeForm entryForm,BindingResult result){
@@ -28,9 +28,9 @@ public class CompleteController {
 			return "registration/input";
 		}
 		//JPA
-//		userService.createUser(entryForm.createUserEntity());
+		userService.createUser(entryForm.createUserEntity());
 		//SpringJdbc
-		userDao.insertUser(entryForm.createUserBean());
+//		userDao.insertUser(entryForm.createUserBean());
 		
 		model.addAttribute(entryForm);
 		return "registration/complete";

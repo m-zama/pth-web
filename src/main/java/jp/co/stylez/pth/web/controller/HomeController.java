@@ -23,8 +23,8 @@ public class HomeController {
 	@Autowired
 	private UserService userService;
 	
-	@Autowired
-	private UserDao userDao;
+//	@Autowired
+//	private UserDao userDao;
 	
 	@GetMapping("home")
 	public String entry(Model model){
@@ -38,12 +38,12 @@ public class HomeController {
 			return "/index";
 		}
 		//JPA
-//		List<UserEntity> userList = userService.findAll();
-//		model.addAttribute("userList",userList);
+		List<UserEntity> userList = userService.findAll();
+		model.addAttribute("userList",userList);
 		
 		//SpringJDBC
-		List<UserBean> userList = userDao.findAll();
-		model.addAttribute("userList",userList);
+//		List<UserBean> userList = userDao.findAll();
+//		model.addAttribute("userList",userList);
 		
 		return "home/home";
 	}

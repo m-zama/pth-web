@@ -12,7 +12,6 @@ import jp.co.stylez.pth.web.entity.UserEntity;
 import jp.co.stylez.pth.web.repository.UserRepository;
 
 @Service
-@Qualifier("UserServiceImpl")
 public class UserServiceImpl implements UserService{
 
 	@Autowired

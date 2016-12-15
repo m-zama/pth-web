@@ -32,8 +32,8 @@ public class JpaConfig {
     private String username;
     @Value("${dataSource.password}")
     private String password;
-    @Value("${sqlSessionFactoryBean.configLocation}")
-    private Resource configLocation;
+//    @Value("${sqlSessionFactoryBean.configLocation}")
+//    private Resource configLocation;
 	
     @Autowired
     BasicDataSource dataSource;

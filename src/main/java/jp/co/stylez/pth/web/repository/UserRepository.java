@@ -10,6 +10,4 @@ import jp.co.stylez.pth.web.entity.UserEntity;
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity,Integer>{
 
-//	@Query("INSERT INTO user(email,password) VALUES(:email,:password)")
-//	UserEntity createUser(@Param("email")String email,@Param("password")String password);
 }
