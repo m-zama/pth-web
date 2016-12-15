@@ -14,18 +14,18 @@ import org.springframework.stereotype.Component;
 @Order(1)
 public class ControllerLoggingAspectA {
 
-	@Before("execution(* jp.co.stylez.pth.web.controller.*.*(..))")
-	public void startLog(JoinPoint jp){
-		System.out.println("Aコントローラー開始："+ jp.getSignature());
-	}
+//	@Before("execution(* jp.co.stylez.pth.web.controller.*.*(..))")
+//	public void startLog(JoinPoint jp){
+//		System.out.println("Aコントローラー開始："+ jp.getSignature());
+//	}
+//	
+//	@AfterReturning("execution(* jp.co.stylez.pth.web.controller.*.*(..))")
+//	public void endLog(JoinPoint jp){
+//		System.out.println("Aコントローラー正常終了："+ jp.getSignature());
+//	}
 	
-	@AfterReturning("execution(* jp.co.stylez.pth.web.controller.*.*(..))")
-	public void endLog(JoinPoint jp){
-		System.out.println("Aコントローラー正常終了："+ jp.getSignature());
-	}
 	
-	
-//	@Around("execution(* jp.co.stylez.pth.web.controller.*.*(..))")
+	@Around("execution(* jp.co.stylez.pth.web.controller.*.*(..))")
 	public Object log(ProceedingJoinPoint jp)throws Throwable{
 		System.out.println("コントローラー開始(Around)："+ jp.getSignature());
 		try{

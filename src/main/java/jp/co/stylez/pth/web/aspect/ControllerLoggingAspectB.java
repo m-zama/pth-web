@@ -13,10 +13,10 @@ import org.springframework.stereotype.Component;
 public class ControllerLoggingAspectB {
 
 //	@Order(1)
-	@Before("execution(* jp.co.stylez.pth.web.controller.*.*(..))")
-	public void startLogA(JoinPoint jp){
-		System.out.println("(startLogA)Bコントローラー開始："+ jp.getSignature());
-	}
+//	@Before("execution(* jp.co.stylez.pth.web.controller.*.*(..))")
+//	public void startLogA(JoinPoint jp){
+//		System.out.println("(startLogA)Bコントローラー開始："+ jp.getSignature());
+//	}
 	
 //	@Order(0)
 //	@Before("execution(* jp.co.stylez.pth.web.controller.*.*(..))")
@@ -25,10 +25,10 @@ public class ControllerLoggingAspectB {
 //	}
 	
 //	@Order(0)
-	@AfterReturning("execution(* jp.co.stylez.pth.web.controller.*.*(..))")
-	public void endLogA(JoinPoint jp){
-		System.out.println("(endLogA)Bコントローラー正常終了："+ jp.getSignature());
-	}
+//	@AfterReturning("execution(* jp.co.stylez.pth.web.controller.*.*(..))")
+//	public void endLogA(JoinPoint jp){
+//		System.out.println("(endLogA)Bコントローラー正常終了："+ jp.getSignature());
+//	}
 	
 //	@Order(1)
 //	@AfterReturning("execution(* jp.co.stylez.pth.web.controller.*.*(..))")
