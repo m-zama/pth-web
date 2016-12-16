@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.core.io.Resource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -32,8 +31,6 @@ public class JpaConfig {
     private String username;
     @Value("${dataSource.password}")
     private String password;
-//    @Value("${sqlSessionFactoryBean.configLocation}")
-//    private Resource configLocation;
 	
     @Autowired
     BasicDataSource dataSource;
