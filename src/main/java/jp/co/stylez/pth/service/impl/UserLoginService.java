@@ -32,13 +32,7 @@ public class UserLoginService implements UserDetailsService{
 	
 	@Autowired
 	private PasswordEncoder passwordEncoder;
-//	@Override
-//	@Transactional(readOnly = true)
-//	public UserLoginDetails loadUserByUsername(String email) throws UsernameNotFoundException{
-//		List<User> userList = Optional.ofNullable(userRepository.findByEmail(email)).orElseThrow(() -> new UsernameNotFoundException("user not found."));
-//		return new UserLoginDetails(userList.get(0), getAuthorities(userList.get(0)));
-//	}
-//	
+	
 	private Collection<GrantedAuthority> getAuthorities(UserEntity user){
 //		if(user.isAdmin()){
 			return AuthorityUtils.createAuthorityList("ROLE_USER", "ROLE_ADMIN");
@@ -54,7 +48,7 @@ public class UserLoginService implements UserDetailsService{
 	}
 
 	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+	public User loadUserByUsername(String username) throws UsernameNotFoundException {
 		UserEntity account = userRepository.findOneByEmail(username);
 		if(account == null) {
 			throw new UsernameNotFoundException("user not found");
@@ -62,20 +56,10 @@ public class UserLoginService implements UserDetailsService{
 		return createUser(account);
 	}
 	
-//	public void signin(UserEntity account) {
-//		SecurityContextHolder.getContext().setAuthentication(authenticate(account));
-//	}
-//	
-//	private Authentication authenticate(UserEntity account) {
-//		return new UsernamePasswordAuthenticationToken(createUser(account), null,  getAuthorities(account));		
-//	}
 	
 	private User createUser(UserEntity account) {
 		return new User(account.getEmail(), account.getPassword(), getAuthorities(account));
 	}
 
-//	private GrantedAuthority createAuthority(UserEntity account) {
-//		return new SimpleGrantedAuthority(account.getRole());
-//	}
 	
 }

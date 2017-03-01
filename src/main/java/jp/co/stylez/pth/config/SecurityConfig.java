@@ -22,10 +22,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Autowired
 	UserLoginService userLoginService;
 	
-//	@Autowired
-//	void configureAuthentificationManager(AuthenticationManagerBuilder auth) throws Exception{
-//		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
-//	}
 	
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
