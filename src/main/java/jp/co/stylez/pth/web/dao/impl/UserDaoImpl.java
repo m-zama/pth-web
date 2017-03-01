@@ -34,7 +34,7 @@ public class UserDaoImpl implements UserDao{
 		for (Map<String, Object> result : resultList) {
 			UserBean userBean = new UserBean();
 			userBean.setId((int) result.get("id"));
-			userBean.setEmail((String) result.get("email"));
+			userBean.setUsername((String) result.get("email"));
 			userBean.setPassword((String) result.get("password"));
 			userList.add(userBean);
 		}
@@ -56,7 +56,7 @@ public class UserDaoImpl implements UserDao{
 		// Mapping
 		UserBean userBean = new UserBean();
 		userBean.setId((int) result.get("id"));
-		userBean.setEmail((String) result.get("email"));
+		userBean.setUsername((String) result.get("email"));
 		userBean.setPassword((String) result.get("password"));
 		return userBean;
 	}
@@ -67,7 +67,7 @@ public class UserDaoImpl implements UserDao{
 
 		// BindParameter
 		MapSqlParameterSource map = new MapSqlParameterSource();
-		map.addValue("email", userBean.getEmail())
+		map.addValue("email", userBean.getUsername())
 			.addValue("password", userBean.getPassword());
 		
 		//INSERT

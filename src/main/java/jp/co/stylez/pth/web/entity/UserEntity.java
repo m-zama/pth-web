@@ -1,11 +1,15 @@
 package jp.co.stylez.pth.web.entity;
 
+import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.springframework.security.core.GrantedAuthority;
 
 @Entity
 @Table(name = "user")
@@ -14,13 +18,25 @@ public class UserEntity {
 	@Id
 	@Column
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long Id;
+	private long id;
 
 	@Column(length = 50, nullable = false)
-	private String Email;
+	private String email;
 
 	@Column(length = 50, nullable = false)
-	private String Password;
+	private String password;
+
+	@Column(length = 10, nullable = false)
+	private String role = "ROLE_USER";
+	
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
 
 	public UserEntity() {
 
@@ -28,32 +44,32 @@ public class UserEntity {
 
 	public UserEntity(String email,String password) {
 		this();
-		this.Email = email;
-		this.Password = password;
+		this.email = email;
+		this.password = password;
 	}
 
 	public long getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(long id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 
 	public String getPassword() {
-		return Password;
+		return password;
 	}
 
 	public void setPassword(String password) {
-		Password = password;
+		this.password = password;
 	}
 	
 
